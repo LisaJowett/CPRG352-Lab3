@@ -1,7 +1,7 @@
 <%-- 
     Document   : viewnote
     Created on : 30-Jan-2022, 6:38:52 PM
-    Author     : lisaj
+    Author     : Lisa Jowett
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
