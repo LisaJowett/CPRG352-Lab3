@@ -12,7 +12,7 @@ public class Note implements Serializable
     private String title;
     private String contents;
 
-    // Constructors
+    // Constructor
     public Note()
     {
 
@@ -24,7 +24,7 @@ public Note(String title, String contents)
         this.contents = contents;
     }
 
-    // Getter/Setters methods
+    // Getter/Setter methods
 
     public String getTitle() 
     {

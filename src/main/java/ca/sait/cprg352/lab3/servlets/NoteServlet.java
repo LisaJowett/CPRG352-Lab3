@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
  * @author Lisa Jowett
  */
 public class NoteServlet extends HttpServlet 
@@ -30,10 +29,11 @@ public class NoteServlet extends HttpServlet
         if(query != null && query.contains("edit"))
         {
             //Display the edit form.
-            getServletContext().getRequestDispatcher("/WEB-INF/edit.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/editnote.jsp").forward(request, response);
         }
         else
         {
+            //Display the viewnote.
             String path = getServletContext().getRealPath("/WEB-INF/note.txt");
 
             BufferedReader br = new BufferedReader(new FileReader(new File(path)));
@@ -63,13 +63,18 @@ public class NoteServlet extends HttpServlet
             throws ServletException, IOException 
     {
         String title = request.getParameter("title");
-        String content = request.getParameter("contents");
+        String contents = request.getParameter("contents");
         String path = getServletContext().getRealPath("WEB-INF/note.txt");
 
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false)));
 
         pw.println(title);
-        pw.println(content);
+        pw.println(contents);
+
         pw.close();
+
+        response.sendRedirect("note");
+
+        getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp").forward(request, response);
     }
 }

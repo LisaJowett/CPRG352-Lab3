@@ -12,12 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Edit Note</h1>
+        <h1>Simple Note Keeper</h1>
+        <h2>Edit Note</h2>
         
         <form action="note" method="post">
-            <input type="text" name="title" id="title" placeholder="Title">
-            <input type="text" name="contents" id="contents" placeholder="Contents">
-            <button type="submit">Submit</button>
+            <p><label for="Title">Title</label>
+               <input type="text" name="title" id="title" placeholder="This is the title"></P><br>
+            <p><label for="Contents">Contents: </label>
+                <input type="text" name="contents" id="contents" placeholder="Contents go here"></p>
+        <button type="submit">Save</button>
         </form>
     </body>
 </html>
